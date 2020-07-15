@@ -11,7 +11,7 @@
  Target Server Version : 80019
  File Encoding         : 65001
 
- Date: 15/07/2020 12:36:03
+ Date: 15/07/2020 16:10:40
 */
 
 SET NAMES utf8mb4;
@@ -23,12 +23,12 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `score`;
 CREATE TABLE `score`  (
   `uid` int(0) NOT NULL AUTO_INCREMENT,
-  `userId` int(0) NULL DEFAULT NULL,
+  `ownerId` int(0) NULL DEFAULT NULL,
   `time` bigint(0) NULL DEFAULT NULL,
   `score` int(0) NULL DEFAULT NULL,
   PRIMARY KEY (`uid`) USING BTREE,
-  INDEX `userId`(`userId`) USING BTREE,
-  CONSTRAINT `score_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `user` (`uid`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  INDEX `ownerId`(`ownerId`) USING BTREE,
+  CONSTRAINT `score_ibfk_1` FOREIGN KEY (`ownerId`) REFERENCES `user` (`uid`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -41,6 +41,7 @@ INSERT INTO `score` VALUES (4, 2, 1594787450440, 34);
 INSERT INTO `score` VALUES (5, 2, 1594787450440, 24);
 INSERT INTO `score` VALUES (6, 2, 1594787450440, 45);
 INSERT INTO `score` VALUES (7, 3, 1594787450440, 34);
+INSERT INTO `score` VALUES (8, 1, 1594800459179, 23);
 
 -- ----------------------------
 -- Table structure for user
@@ -64,5 +65,10 @@ INSERT INTO `user` VALUES (6, 'Jane');
 INSERT INTO `user` VALUES (7, 'Xiujuan');
 INSERT INTO `user` VALUES (8, 'Sein');
 INSERT INTO `user` VALUES (9, 'Sone');
+INSERT INTO `user` VALUES (10, 'Tin');
+INSERT INTO `user` VALUES (11, 'Cher Wah');
+INSERT INTO `user` VALUES (15, 'suria');
+INSERT INTO `user` VALUES (16, 'Esther');
+INSERT INTO `user` VALUES (18, 'YueKuan');
 
 SET FOREIGN_KEY_CHECKS = 1;
