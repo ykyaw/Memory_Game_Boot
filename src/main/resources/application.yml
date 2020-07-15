@@ -1,0 +1,23 @@
+# datasource info
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.1.100:3306/memory_game
+    username: root
+    password: 123456
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    iss.team1.ca.memorygame.boot.mapper: debug
+
+
+
