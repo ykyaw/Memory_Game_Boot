@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ScoreMapper {
 
-    @Select("select ownerId,MIN(score) as score from score c GROUP BY c.ownerId ORDER BY score")
+    @Select("select ownerId,MIN(score) as score from score c GROUP BY c.ownerId ORDER BY score limit 10")
     @Results(id = "score",
             value = {
                     @Result(id = true,column = "uid",property = "uid"),
